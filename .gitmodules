@@ -36,3 +36,6 @@
 [submodule "machinedata-simulator"]
 	path = machinedata-simulator
 	url = https://github.com/predixdev/machinedata-simulator.git
+[submodule "predix-rmd-analytics-ref-app"]
+	path = predix-rmd-analytics-ref-app
+	url = https://github.com/predixdev/predix-rmd-analytics-ref-app.git
