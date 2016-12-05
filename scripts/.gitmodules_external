@@ -1,0 +1,24 @@
+[submodule "predix-scripts"]
+	path = predix-scripts
+	url = https://github.com/PredixDev/predix-scripts.git
+[submodule "predix-sdks"]
+	path = predix-sdks
+	url = https://github.com/PredixDev/predix-sdks.git
+[submodule "Predix-HelloWorld-WebApp"]
+        path = Predix-HelloWorld-WebApp
+        url = http://github.com/PredixDev/Predix-HelloWorld-WebApp.git
+[submodule "data-seed-service"]
+	path = data-seed-service
+	url = http://github.com/PredixDev/data-seed-service.git
+[submodule "fdh-router-service"]
+ 	path = fdh-router-service
+ 	url = https://github.build.ge.com/adoption/fdh-router-service.git
+[submodule "rmd-datasource"]
+	path = rmd-datasource
+	url = http://github.com/PredixDev/rmd-datasource.git
+[submodule "rmd-ref-app-ui"]
+	path = rmd-ref-app-ui
+	url = http://github.com/PredixDev/rmd-ref-app-ui.git
+[submodule "predix-websocket-server"]
+	path = predix-websocket-server
+	url = http://github.com/PredixDev/predix-websocket-server.git

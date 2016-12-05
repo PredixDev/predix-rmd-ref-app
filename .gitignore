@@ -1,0 +1,17 @@
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+starttime
+**~
+acs_payload.json
+asset_payload.json
+timeseries_payload.json
+uaa_payload.json
+*.pyc
+scripts/mvn_settings_temp.xml
+json_output.txt
+.gitmodules.bak
+.gitmodules.script

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ge.predix.solsvc</groupId>
+	<artifactId>rmd-ref-app</artifactId>
+	<version>2.0.6</version>
+	<packaging>pom</packaging>
+
+	<modules>
+	
+	
+	<module>predix-websocket-server</module>
+	<module>data-seed-service</module>
+	
+	
+	<module>rmd-datasource</module>
+	<module>fdh-router-service</module>
+
+	</modules>
+	<properties>
+		
+	</properties>
+
+	<dependencies>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			
+		</plugins>
+	</build>
+
+</project>

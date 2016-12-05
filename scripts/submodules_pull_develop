@@ -1,0 +1,23 @@
+git status
+
+cd predix-scripts
+git pull origin develop
+cd predix-sdks
+git pull origin develop
+cd Predix-HelloWorld-WebApp
+git pull origin develop
+cd ../data-seed-service
+git pull origin develop
+cd ../dataingestion-service
+git pull origin develop
+cd ../machinedata-simulator
+git pull origin develop
+cd ../rmd-datasource
+git pull origin develop
+cd ../rmd-ref-app-ui
+git pull origin develop
+cd ../predix-websocket-server
+git pull origin develop
+cd ../predix-rmd-analytics-ref-app
+git pull origin develop
+

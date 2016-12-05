@@ -1,0 +1,1 @@
+The dependencies in this project are resolved by Maven pom.xml.  Copyrights from those projects are included [here](http://predixdev.github.io/predix-rmd-ref-app/copyright.html).  This list may be a superset of projects actually referenced by this project.
