@@ -4,7 +4,7 @@ Microcomponents are reusable libraries that can be used in any microservice.  Th
 
 - [Predix Microservice Templates](#PredixMicroserviceTemplates)
 - [Predix Rest Client](#PredixRestClient)
-- [Predix Rest Client](#PredixWebSocketClient)
+- [Predix Web Socket Client](#PredixWebSocketClient)
 - [Asset Bootstrap Client](#AssetBootstrapClient)
 - [Timeseries Bootstrap Client](#TimeseriesBootstrapClient)
 
