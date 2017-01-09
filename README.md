@@ -3,7 +3,7 @@
 </a>
 Predix RMD Reference App 
 =====================
-
+ 
 Welcome to the Predix Remote Monitoring & Diagnostics (RMD) Reference Application.  The Predix platform enables you to create applications with an Industrial Internet focus and allows you to manage and scale those applications as they are consumed by your end users.  
 
 The RMD Reference App shows developers and architects how to use and leverage all of the Predix application building block Services you find in the [Catalog](https://www.predix.io/catalog).  So, it only has some aspects of a fully featured RMD application.  Instead, it's intent is to show developers and architects a best-practices microservices application architecture integrating with all the underlying Predix Services.  It will save you a few weeks or months of effort if you leverage the components inside.    
