@@ -1,0 +1,23 @@
+git status
+pwd
+cd predix-scripts
+git checkout develop
+cd predix-sdks
+git checkout develop
+cd Predix-HelloWorld-WebApp
+git checkout develop
+cd ../data-seed-service
+git checkout  develop
+cd ../dataingestion-service
+git checkout  develop
+cd ../machinedata-simulator
+git checkout  develop
+cd ../rmd-datasource
+git checkout  develop
+cd ../rmd-ref-app-ui
+git checkout  develop
+cd ../predix-websocket-server
+git checkout  develop
+cd ../predix-rmd-analytics-ref-app
+git checkout  develop
+
