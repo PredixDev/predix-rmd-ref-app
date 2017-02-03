@@ -81,7 +81,7 @@ def deployReferenceAppDelete(config):
 			unbind(config.uiAppName,config.rmdPredixTimeseriesName)
 			unbind(config.uiAppName,config.rmdRedis)
 			deleteExistingApplication(config.uiAppName)
-
+			
 			deleteExistingService(config.rmdUaaName)
 			deleteExistingService(config.rmdAcsName)
 			deleteExistingService(config.rmdPredixAssetName)

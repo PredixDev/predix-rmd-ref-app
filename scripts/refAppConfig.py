@@ -185,7 +185,10 @@ websocketAppName = instanceAppender+"-websocket-server"
 fdhAppName = instanceAppender+"-fdh-router-service"
 rmdRabbitMQ= instanceAppender+"-rabbitmq"
 rmdBlobstore= instanceAppender+"-blobstore"
-if environment == 'PROD' or environment == 'SELECT' or environment == 'JAPAN' or environment == 'UK':
+rmdAnalyticsAppName = instanceAppender+"-rmd-analytics"
+rmdFCEAppName = instanceAppender+"-fce-consumer"
+windDataAppName = instanceAppender+"-winddata-service"
+if environment == 'PROD' or environment == 'SELECT' or environment == 'JAPAN' or environment == 'UK' or environment == 'FREE' :
     # Predix Service Instance Name for VPC
     predixUaaService = "predix-uaa"
     predixAcsService = "predix-acs"
@@ -205,7 +208,7 @@ if environment == 'PROD' or environment == 'SELECT' or environment == 'JAPAN' or
     predixRabbitMQPlan = "standard"
     predixBlobstorePlan = "Tiered"
     artifactoryrepo = "https://artifactory.predix.io/artifactory/PREDIX-EXT"
-elif environment == 'FREE' :
+elif environment == 'CF3FREE' :
     # Predix Service Instance Name for sysint
     predixUaaService = "predix-uaa"
     predixAcsService = "predix-acs"
@@ -242,7 +245,7 @@ elif environment == 'HACK' :
     predixRabbitMQPlan = "standard"
     predixRedisPlan = "shared-vm"
     predixBlobstorePlan = "Tiered"
-else :
+elif environment == 'R2' :
     # Predix Service Instance Name for sysint
     predixUaaService = "predix-uaa-sysint"
     predixAcsService = "predix-acs-sysint"
@@ -259,6 +262,9 @@ else :
     predixPostgresPlan = "Free"
     predixRabbitMQPlan = "standard"
     predixRedisPlan = "shared-vm"
+else :
+    sys.exit("Please identify which env")
+
 
 if environment == 'SELECT':
     resolver = "10.128.99.10"
