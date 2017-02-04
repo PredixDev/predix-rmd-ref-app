@@ -13,18 +13,23 @@ You can view a running version of the  [Reference App](https://rmd-ref-app.run.a
         User: app_user_1
         Password: app_user_1
         
-You can view our <a href=https://youtu.be/2MGPTJ8yjyc target="_blank">Video</a> and later run the [deployment script ](https://predix.io/resources/tutorials/tutorial-details.html?tutorial_id=1473&tag=1610&journey=Connect%20devices%20using%20the%20Reference%20App&resources=1592,1473,1600#deploy) (scroll down to 'Download and Install'), which will push the Reference App to your own Cloud Foundry space so you can quickly start trying out various Predix Services.
+You can view our <a href=https://youtu.be/2MGPTJ8yjyc target="_blank">Video</a> and later run the [deployment script ](https://predix.io/resources/tutorials/tutorial-details.html?tutorial_id=1473&tag=1610&journey=Connect%20devices%20using%20the%20Reference%20App&resources=1592,1473,1600#deploy), which will push the Reference App to your own Cloud Foundry space so you can quickly start trying out various Predix Services.
 
 Now, take a few moments to learn all about  Predix, using Reference App as a guide.  There is lots to discover and soon you'll be creating Predix Apps of your own.
 
 ##Predix Integration
 The Reference App Front-End and Back-End Microservices demonstrate how to use the Predix PAAS to build an Industrial Internet application.  The app takes advantage of the following Predix components:
 
-- [Predix Dashboard UI Seed](https://github.com/predixdev/predix-seed)
-- [Predix Security](https://www.predix.io/docs#Jig2gorb)
+[Base Asset Monitoring Reference App Installer](https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=2106&tag=1610&journey=Digital%20Twin%3A%20from%20the%20Edge%20to%20the%20Cloud%20using%20RMD%20Reference%20App&resources=1592,1473,2106,1600)
+- [Predix UI Seed](https://github.com/predixdev/predix-seed)
+- [Predix UAA Security](https://www.predix.io/docs#Jig2gorb)
 - [Predix Asset](https://www.predix.io/docs#zChUPu1U)
-- [Predix Timeseries](https://www.predix.io/docs#mnlfuvZz)
+- [Predix Time Series](https://www.predix.io/docs#mnlfuvZz)
+
+[Digital Twin Analytics Reference App Installer](https://www.predix.io/resources/tutorials/journey.html#1611)
 - [Predix Analytics](https://www.predix.io/docs#EG3xVdLg)
+
+[Edge Starters - Personal Edition Installer](https://www.predix.io/resources/tutorials/journey.html#2054)
 - [Predix Machine](https://www.predix.io/docs#mL2j0aax)
 - [Predix Machine Modbus Adapter](https://www.predix.io/docs/?r=402244#wjGUrd7M)
 - [Predix Data River Receiver](https://www.predix.io/docs/?r=829105#s8wRgtg6)
@@ -36,7 +41,7 @@ RMD Reference App is composable and the pieces can be used in a variety of confi
 
 Beyond the core services there are other [microservices](#microservices) and [microcomponent utilities](#microcomponents) which help generate Data, make Secure Rest calls or integrate with all the different Predix Services and Security.
 
-##Detailed Architecture
+##Detailed Architecture of the Base Asset Monitoring Reference App
 
 Architecturally the reference app is organized into four Tiers (Presentation, Delivery, Aggregation and Storage) and supports three Data Flows (Ingestion, Analytics, Visualization)
 - Presentation Tier - UI layer and microservices
@@ -44,26 +49,32 @@ Architecturally the reference app is organized into four Tiers (Presentation, De
 - Aggregation Tier - Service Composition and Business Logic
 - Storage Tier - the Predix PAAS Services
 
-<img src="images/refapp_arch1.png">
+<img src="images/refapp_arch1.png" width="600px">
 
-The 8 microservices are pushed to and run in cloud foundry, as follows:
+The 2 main microservices and some helper microservices which are pushed to and run in cloud foundry, as follows:
 
-<img src="images/ReferenceApp-Microservices.png">
+<img src="images/ReferenceApp-Microservices.png" width="600px">
 
 ###Ingestion Flow
-Data Flows in two ways. Either from the MachineDataSimulator to the Timeseries Ingester which looks up the Asset Meter meta-data providing info needed to post data to the Predix Timeseries service. Or from the Predix Machine DataRiver which posts data over a websocket to the Timeseries service directly.  The Web Socket Server is also notified via a websocket which allows for a Live websocket feed to the RMD UI and also provides a trigger point for Analytics.
+When you install the Reference App, Data Flows from the DataSimulator to Predix Time Series.
+
+In the real world, the Predix Machine DataRiver posts data over a websocket to the Time Series service directly.  The Edge Starter applications do just that.  
+
+We have a custom Web Socket Server microservice as part of the Reference App UI.  The simulator also sends it the same data, which allows for a Live websocket feed to the RMD UI and also provides a trigger point for Analytics.
 
 (future) Raw data often needs cleaning and preparation before it is consumable via Analytics and UI.  A best-practice would be to mark this data as raw and trigger Cleansing and Quality jobs leveraging the analytics framework.  
 
 <img src='images/RefApp-IngestionFlow.png' >
 
 ###Visualization Flow
-The UI accesses data from Predix Asset directly which drives the Asset selector menu. Once a selection is made the View requests data from the RMD Datasource and returns the data from Predix Asset and Predix Timeseries in a mashup.  However, in the Graph Widget the Timeseries service is accessed directly. 
+The UI accesses data from Predix Asset directly which drives the Asset selector menu. Once a selection is made the View requests data from the RMD Datasource and returns the data from Predix Asset and Predix Time Series in a mashup.  However, in the Graph Widget the Time Series service is accessed directly. 
 
 <img src='images/RefApp-VisualizationFlow.png' width=600 height=400>
 
+##Detailed Architecture of the Digital Twin Analytics Reference App
+
 ###Analytics Flow		
-Data arrives via the Ingestion Flow and is stored.  A message is placed in a queue which kicks off an Analytic Orchestration.  The Analytics uses data from Predix Asset and Predix Timeseries, produces a result, which is then stored back to Predix Asset or Predix Timeseries or potentially to/from any other datastore.		
+Data arrives via the Ingestion Flow and is stored.  A message is placed in a queue which kicks off an Analytic Orchestration.  The Analytics uses data from Predix Asset and Predix Time Series, produces a result, which is then stored back to Predix Asset or Predix Time Series or potentially to/from any other datastore.		
 		
 <img src='images/RefApp-AnalyticsFlow.png' >		
 
@@ -88,9 +99,9 @@ Go through the following tutorial on how to build a simple hello world applicati
 https://www.predix.io/resources/tutorials/journey.html#1719
 
 ##Microservices
-The Ref App consists of 8 microservices. Each microservice can be individually managed and scaled, leveraging the Cloud Foundry infrastructure. These services can be mixed and matched for your next Predix application depending on which services you need to integrate with.
+The Base Asset Monitoring Ref App consists of 2 core microservices and 2 helper microservices. Each microservice can be individually managed and scaled, leveraging the Cloud Foundry infrastructure. These services can be mixed and matched for your next Predix application depending on which services you need to integrate with.
 
-The Default UAAconfigurationconfigured for the RMD refernce application is loacted under scripts/refappConfig.py folder
+The configuration file used by the installer is loacted under [scripts/refappConfig.py](https://github.com/PredixDev/predix-rmd-ref-app/blob/master/scripts/refAppConfig.py) folder
  ```
  rmdAppClientId = "app_client_id"
  rmdAppSecret = "secret"
@@ -101,7 +112,7 @@ The Default UAAconfigurationconfigured for the RMD refernce application is loact
 An AngularJS/Web Components based UI framework.  We used the [Predix Dashboard Seed](https://github.com/PredixDev/predix-seed) as a starting point.  The UI talks to the RMD Datasource Service, Predix UAA, Predix Asset and Predix Timerseries back-end services.
 
 ###[RMD Datasource Service](https://github.com/PredixDev/rmd-datasource/blob/master/README.md#welcome-to-the-rmd-datasource-microservice)
-A Mashup Service doing much of the logic for the Reference App.  It talks to Predix Asset and Timeseries databases and return results for display.
+A Mashup Service doing much of the logic for the Reference App.  It talks to Predix Asset and Time Series databases and return results for display.
 
 ###[FDH Datahandler Service - DataExchange](https://github.com/predixdev/fdh-router-service/tree/master#fdh-router-service)
   The Federated Data Handler DataExchange framework retrieves data from any Datasource using a simple Get or Put API.  The Analytic framework leverages it to retrieve data and store results. DataExchange can help manage data Get/Put requests that are from distributed, near-data, relational db, public internet, in a file, via other Rest APIs and also at the Edge (on Machines outside the cloud).
@@ -109,11 +120,8 @@ A Mashup Service doing much of the logic for the Reference App.  It talks to Pre
 ###[Data Seed Service](https://github.com/PredixDev/data-seed-service/blob/master/README.md#welcome-to-the-data-seed-service)
 A service to help create sample data in Predix Asset.  Upload a spreadsheet of data and it creates Groups, Classfications, Assets and Meters in Predix Asset. 
 
-###[Data Simulator Service](https://github.com/PredixDev/fdh-router-service/tree/master/data-exchange-simulator)
-  A Service to generate data when a physical machine is not available.  The Simulator sends data to the Data Ingestion Service when it is up and running.
-
-###[Data Ingestion Service] - deprecated, now using DataExchange
-  A Service to accept Machine data or Simulated data, look up the Asset and Meter information in Predix Asset which provides enough info to post the data to the Timeseries database.  It also acts as a websocket server streaming live Machine sensor data to the UI.
+###[Data Exchange Simulator Service](https://github.com/PredixDev/fdh-router-service/tree/master/data-exchange-simulator)
+  A Service to generate data when a physical machine is not available.  The Simulator sends data to the Data Exchange Service when it is up and running.
 
 ###[RMD Orchestration Service](https://github.com/predixdev/rmd-orchestration/tree/master#rmd-orchestration)
   A Service that listens for FieldChangedEvent Queue messages to trigger Predix Analytic Orchestrations.  The DataIngestion service puts these messages on the queue when data for a Field representing a Sensor arrives.  Orchestrations themselves can also place messages on the queue which can trigger more Orchestrations updating attributes up (or down) the Asset Hierarchy.

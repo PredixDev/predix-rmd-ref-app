@@ -3,10 +3,12 @@
 Microcomponents are reusable libraries that can be used in any microservice.  The Adoption team has developed many Bootstrap Microcomponents, the following are relevent to the current version of Predix.
 
 - [Predix Microservice Templates](#PredixMicroserviceTemplates)
-- [Predix Rest Client](#PredixRestClient)
-- [Predix Web Socket Client](#PredixWebSocketClient)
-- [Asset Bootstrap Client](#AssetBootstrapClient)
-- [Timeseries Bootstrap Client](#TimeseriesBootstrapClient)
+- [Predix SDKS](https://github.com/PredixDev/predix-sdks)
+  - [Predix Rest Client](#PredixRestClient)
+  - [Predix Web Socket Client](#PredixWebSocketClient)
+  - [Asset Bootstrap Client](#AssetBootstrapClient)
+  - [Timeseries Bootstrap Client](#TimeseriesBootstrapClient)
+  - and more...
 
 ###<a name="PredixMicroserviceTemplates" href="https://github.com/predixdev/predix-microservice-templates">PredixMicroserviceTemplates</a>
 A collection of back-end Microservice bootstraps that gets you creating a Microservice much quicker than starting from scratch.  For Java, we started with SpringBoot helloWorld and added CXF, Tomcat, Spring Profiles and Property File management features that you would need anyway.  Other templates for NodeJS, etc are on their way.

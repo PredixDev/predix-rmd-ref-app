@@ -25,8 +25,8 @@ try:
 	if config.only not in (''):
 		if config.only in ('validate'):
 			refApp.validate(config)
-		if config.only in ('buildPredixSDKs'):
-			refApp.buildPredixSDKs(config)
+		#if config.only in ('buildPredixSDKs'):
+		#	refApp.buildPredixSDKs(config)
 		if config.only in ('buildReferenceApp'):
 			refApp.buildReferenceApp(config)
 		if config.only in ('deployReferenceAppDelete'):
@@ -64,7 +64,7 @@ try:
 			#try:
 				#refApp.updateGitModules(config)
 				refApp.validate(config)
-				refApp.buildPredixSDKs(config)
+				#refApp.buildPredixSDKs(config)
 				refApp.buildReferenceApp(config)
 				refApp.deployReferenceAppDelete(config)
 				refApp.deployReferenceAppCreateUAA(config)
@@ -86,9 +86,9 @@ try:
 		if config.continueFrom in ('continue','validate'):
 			config.continueFrom = 'continue'
 			refApp.validate(config)
-		if config.continueFrom in ('continue','buildPredixSDKs'):
-			config.continueFrom = 'continue'
-			refApp.buildPredixSDKs(config)
+		#if config.continueFrom in ('continue','buildPredixSDKs'):
+		#	config.continueFrom = 'continue'
+		#	refApp.buildPredixSDKs(config)
 		if config.continueFrom in ('continue','buildReferenceApp'):
 			config.continueFrom = 'continue'
 			refApp.buildReferenceApp(config)
