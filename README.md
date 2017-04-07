@@ -1,8 +1,11 @@
 <a href="http://predixdev.github.io/predix-rmd-ref-app" target="_blank">
 	<img height="50px" width="100px" src="images/pages.jpg" alt="view github pages">
 </a>
+
+
 Predix RMD Reference App 
-=====================
+===========================
+
 
 Welcome to the Predix Remote Monitoring & Diagnostics (RMD) Reference Application.  The Predix platform enables you to create applications with an Industrial Internet focus and allows you to manage and scale those applications as they are consumed by your end users.  
 
