@@ -1,5 +1,5 @@
 <a href="http://predixdev.github.io/predix-rmd-ref-app" target="_blank">
-	<img height="50px" width="100px" src="https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/pages.jpg?raw=true" alt="view github pages">
+	<img height="50px" width="100px" src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/pages.jpg?raw=true" alt="view github pages">
 </a>
 Predix RMD Reference App 
 =====================
@@ -37,7 +37,7 @@ The Reference App Front-End and Back-End Microservices demonstrate how to use th
 ##RMD Reference App
 RMD Reference App is composable and the pieces can be used in a variety of configurations to help solve your Application use-case.  Like most Apps, at it's core, Reference App consists of a [RMD UI](#microservices) front end microservice and a [RMD Datasource](#microservices) back-end microservice.   
 
-<img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/RefApp-CoreMicroservices.png?raw=true">
+<img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-CoreMicroservices.png?raw=true">
 
 Beyond the core services there are other [microservices](#microservices) and [microcomponent utilities](#microcomponents) which help generate Data, make Secure Rest calls or integrate with all the different Predix Services and Security.
 
@@ -49,11 +49,11 @@ Architecturally the reference app is organized into four Tiers (Presentation, De
 - Aggregation Tier - Service Composition and Business Logic
 - Storage Tier - the Predix PAAS Services
 
-<img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/refapp_arch1.png?raw=true" width="600px">
+<img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/refapp_arch1.png?raw=true" width="600px">
 
 The 2 main microservices and some helper microservices which are pushed to and run in cloud foundry, as follows:
 
-<img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/ReferenceApp-Microservices2.png?raw=true" width="600px">
+<img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/ReferenceApp-Microservices2.png?raw=true" width="600px">
 
 ###Ingestion Flow
 When you install the Reference App, Data Flows from the DataSimulator to Predix Time Series.
@@ -64,7 +64,7 @@ We also have a custom Web Socket Server microservice as part of the Reference Ap
 
 (future) Raw data often needs cleaning and preparation before it is consumable via Analytics and UI.  A best-practice would be to mark this data as raw and trigger Cleansing and Quality jobs leveraging the analytics framework.  
 
-<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/RefApp-IngestionFlow2.png?raw=true' >
+<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-IngestionFlow2.png?raw=true' >
 
 ###Ingestion Flow (pipeline architecture)
 (future) For many applications, there is a need to be in the flow of data as it arrives.  The Event Hub service provides a subscription mechanism as the data comes in, the proposed flow below has data coming in to the Data Exchange so that other actions can be taken.  Examples are:
@@ -75,13 +75,13 @@ We also have a custom Web Socket Server microservice as part of the Reference Ap
 
 We leave these enhancements to you to implement depending on your application use-case.
 
-<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/RefApp-IngestionFlow-pipeline.png?raw=true' >
+<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-IngestionFlow-pipeline.png?raw=true' >
 
 
 ###Visualization Flow
 The UI accesses data from Predix Asset directly which drives the Asset selector menu. Once a selection is made the View requests data from the RMD Datasource and returns the data from Predix Asset and Predix Time Series in a mashup.  However, in the Graph Widget the Time Series service is accessed directly. 
 
-<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/RefApp-VisualizationFlow.png?raw=true' width=600 height=400>
+<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-VisualizationFlow.png?raw=true' width=600 height=400>
 
 ##Detailed Architecture of the Digital Twin Analytics Reference App
 
@@ -90,7 +90,7 @@ Since we have your attention, we'd like to introduce the features of our Digital
 ###Analytics Flow		
 Data arrives via the Ingestion Flow and is stored.  A message is placed in a queue which kicks off an Analytic Orchestration.  The Analytics uses data from Predix Asset and Predix Time Series, produces a result, which is then stored back to Predix Asset or Predix Time Series or potentially to/from any other datastore.		
 		
-<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/develop/images/RefApp-AnalyticsFlow2.png?raw=true' >		
+<img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-AnalyticsFlow2.png?raw=true' >		
 
 ##Getting Acquainted with Reference App
 
