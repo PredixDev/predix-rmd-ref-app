@@ -33,12 +33,9 @@ global dataSeedAppName
 global dataSourceAppName
 #global httpDataRiverAppName
 global dataExchangeAppName
-global dataIngestionAppName
-global machineSimulatorAppName
 global dataExchangeSimulatorAppName
 global uiAppName
 global websocketAppName
-global fdhAppName
 global rmdRabbitMQ
 global predixUaaService
 global predixAcsService
@@ -176,16 +173,12 @@ predixbootAppName = instanceAppender+"-hello-world"
 dataSeedAppName = instanceAppender+"-data-seed"
 dataSourceAppName = instanceAppender+"-rmd-datasource"
 httpDataRiverAppName = instanceAppender+"-http-datariver"
-dataIngestionAppName = instanceAppender+"-dataingestion"
 dataExchangeAppName = instanceAppender+"-data-exchange"
-machineSimulatorAppName = instanceAppender+"-machinedata-simulator"
 dataExchangeSimulatorAppName = instanceAppender+"-data-exchange-simulator"
 uiAppName = instanceAppender+"-rmd-ref-app-ui"
 websocketAppName = instanceAppender+"-websocket-server"
-fdhAppName = instanceAppender+"-fdh-router-service"
 rmdRabbitMQ= instanceAppender+"-rabbitmq"
 rmdBlobstore= instanceAppender+"-blobstore"
-rmdAnalyticsAppName = instanceAppender+"-rmd-analytics"
 rmdFCEAppName = instanceAppender+"-fce-consumer"
 windDataAppName = instanceAppender+"-winddata-service"
 if environment == 'PROD' or environment == 'SELECT' or environment == 'JAPAN' or environment == 'UK' or environment == 'FREE' :

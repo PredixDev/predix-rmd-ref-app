@@ -48,12 +48,8 @@ try:
 			refApp.deployReferenceAppCreateDatasource(config)
 		if config.only in ('deployReferenceAppCreateWebsocketServer'):
 			refApp.deployReferenceAppCreateWebsocketServer(config)
-		#if config.only in ('deployReferenceAppCreateDataIngestion'):
-		#	refApp.deployReferenceAppCreateDataIngestion(config)
 		if config.only in ('deployReferenceAppCreateDataExchange'):
 			refApp.deployReferenceAppCreateDataExchange(config)
-		if config.only in ('deployReferenceAppCreateMachineSimulator'):
-			refApp.deployReferenceAppCreateMachineSimulator(config)
 		if config.only in ('deployReferenceAppCreateUI'):
 			refApp.deployReferenceAppCreateUI(config)
 		if config.only in ('deployReferenceAppFinalPrep'):
@@ -74,9 +70,7 @@ try:
 				refApp.deployReferenceAppCreateDataseed(config)
 				refApp.deployReferenceAppCreateDatasource(config)
 				refApp.deployReferenceAppCreateWebsocketServer(config)
-				#refApp.deployReferenceAppCreateDataIngestion(config)
 				refApp.deployReferenceAppCreateDataExchange(config)
-				refApp.deployReferenceAppCreateMachineSimulator(config)
 				refApp.deployReferenceAppCreateUI(config)
 				refApp.deployReferenceAppFinalPrep(config)
 				refApp.sanityChecks(config)
@@ -122,9 +116,6 @@ try:
 		if config.continueFrom in ('continue','deployReferenceAppCreateDataExchange'):
 			config.continueFrom = 'continue'
 			refApp.deployReferenceAppCreateDataExchange(config)
-		#if config.continueFrom in ('continue','deployReferenceAppCreateDataIngestion'):
-		#	config.continueFrom = 'continue'
-		#	refApp.deployReferenceAppCreateDataIngestion(config)
 		if config.continueFrom in ('continue','deployReferenceAppCreateMachineSimulator'):
 			config.continueFrom = 'continue'
 			refApp.deployReferenceAppCreateMachineSimulator(config)

@@ -1,0 +1,17 @@
+{
+  "name": "Predix Asset Monitoring RMD Reference App",
+  "version": "1.0.30",
+  "private": true,
+  "dependencies": {
+    "data-exchange": "https://github.com/PredixDev/data-exchange.git#2.0.18",
+    "data-exchange-simulator": "https://github.com/PredixDev/data-exchange-simulator.git#1.0.14",
+    "data-exchange-ui": "https://github.com/PredixDev/data-exchange-ui.git#3.0.3",
+    "local-setup": "https://github.com/PredixDev/local-setup#1.0.11",
+    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.0.17",
+    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp.git#1.0.2",
+    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter.git#1.0.0",
+    "predix-websocket-server": "https://github.com/PredixDev/predix-websocket-server.git#20151210",
+    "rmd-datasource": "https://github.com/PredixDev/rmd-datasource.git#20151210"
+  },
+  "author": "turnerth"
+}

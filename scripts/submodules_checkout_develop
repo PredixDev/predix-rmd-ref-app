@@ -2,11 +2,11 @@ git status
 pwd
 cd Predix-HelloWorld-WebApp
 git checkout develop
-cd ../data-seed-service
+cd ../data-exchange
 git checkout manifest.yml
 git checkout  develop
-cd ../fdh-router-service
-git checkout data-exchange/manifest.yml
+cd ../data-exchange-simulator
+git checkout manifest.yml
 git checkout  develop
 cd ../predix-scripts
 git checkout develop
@@ -18,7 +18,7 @@ git checkout  develop
 cd ../rmd-datasource
 git checkout manifest.yml
 git checkout  develop
-cd ../rmd-ref-app-ui
+cd ../predix-webapp-starter
 git checkout manifest.yml
 git checkout  develop
 cd ..

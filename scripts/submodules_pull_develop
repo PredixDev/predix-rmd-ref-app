@@ -2,9 +2,9 @@ git status
 
 cd Predix-HelloWorld-WebApp
 git pull origin develop
-cd ../data-seed-service
+cd ../data-exchange
 git pull origin develop
-cd ../fdh-router-service
+cd ../data-exchange-simulator
 git pull origin develop
 cd ../predix-scripts
 git pull origin develop
@@ -14,6 +14,6 @@ cd ../predix-websocket-server
 git pull origin develop
 cd ../rmd-datasource
 git pull origin develop
-cd ../rmd-ref-app-ui
+cd ../predix-webapp-starter
 git pull origin develop
 cd ..

@@ -47,10 +47,6 @@ def deployReferenceAppDelete(config):
 			unbind(config.predixbootAppName,config.rmdPredixTimeseriesName)
 			deleteExistingApplication(config.predixbootAppName)
 
-			unbind(config.fdhAppName, config.rmdPredixAssetName)
-			unbind(config.fdhAppName, config.rmdPredixTimeseriesName)
-			deleteExistingApplication(config.fdhAppName)
-
 			unbind(config.dataSeedAppName,config.rmdUaaName)
 			unbind(config.dataSeedAppName,config.rmdAcsName)
 			unbind(config.dataSeedAppName,config.rmdPredixAssetName)
@@ -499,21 +495,21 @@ def deployReferenceAppCreateWebsocketServer(config):
 			raise
 
 
-def deployReferenceAppCreateDataIngestion(config):
+
+def deployReferenceAppCreateDataExchange(config):
 	try:
-		print("****************** Running deployReferenceAppCreateDataIngestion ******************")
-		config.current='deployReferenceAppCreateDataIngestion'
+		print("****************** Running deployReferenceAppCreateDataExchange ******************")
+		config.current='deployReferenceAppCreateDataExchange'
+		if config.useDataexchangeRabbitMQ in ("y","Y","Yes","Yes") :
+			createRabbitMQInstance(config)
+		if config.useDataexchangeBlobStore in ("y","Y","YES","Yes") :
+			deployReferenceAppCreateBlobstore(config)
+
 		getPredixUAAConfigfromVcaps(config)
 		getWebsocketAppInfo(config)
-		dataIngestionRepoName = "dataingestion-service"
-		configureManifest(config, dataIngestionRepoName)
-		pushProject(config, config.dataIngestionAppName, 'cf push '+config.dataIngestionAppName+' -f '+dataIngestionRepoName+'/manifest.yml',dataIngestionRepoName, checkIfExists="false")
-
-
-		cfTarget= subprocess.check_output(["cf", "app",config.dataIngestionAppName])
-		print (cfTarget)
-		config.DATA_INGESTION_URL="https://"+cfTarget.decode('utf8').split('urls:')[1].strip().split('last uploaded:')[0].strip()
-		print ('Data Ingestion URL '+config.DATA_INGESTION_URL)
+		dataExchangeRepoLocation = "data-exchange"
+		configureManifest(config, dataExchangeRepoLocation)
+		pushProject(config, config.dataExchangeAppName, 'cf push '+config.dataExchangeAppName+' -f '+dataExchangeRepoLocation+'/manifest.yml',dataExchangeRepoLocation, checkIfExists="false")
 		config.retryCount=0
 	except:
 		print(traceback.print_exc())
@@ -521,7 +517,7 @@ def deployReferenceAppCreateDataIngestion(config):
 		print ('Exception when running ' + config.current + '.  Retrying')
 		config.retryCount = config.retryCount + 1
 		if config.retryCount <= 1 :
-			deployReferenceAppCreateDataIngestion(config)
+			deployReferenceAppCreateDataExchange(config)
 		else :
 			raise
 
@@ -535,7 +531,7 @@ def deployReferenceAppCreateMachineSimulator(config):
 		config.DATA_EXCHANGE_HOST=cfTarget.decode('utf8').split('urls:')[1].strip().split('last uploaded:')[0].strip()
 		config.DATA_EXCHANGE_URL="https://"+config.DATA_EXCHANGE_HOST
 		print ("DATA_EXCHANGE_URL : "+config.DATA_EXCHANGE_URL)
-		machineSimulatorRepoLocation = "fdh-router-service/data-exchange-simulator"
+		machineSimulatorRepoLocation = "data-exchange-simulator"
 		configureManifest(config, machineSimulatorRepoLocation)
 		pushProject(config, config.dataExchangeSimulatorAppName, 'cf push '+config.dataExchangeSimulatorAppName+' -f '+machineSimulatorRepoLocation+'/manifest.yml',machineSimulatorRepoLocation, checkIfExists="false")
 		config.retryCount=0
@@ -546,30 +542,6 @@ def deployReferenceAppCreateMachineSimulator(config):
 		config.retryCount = config.retryCount + 1
 		if config.retryCount <= 1 :
 			deployReferenceAppCreateMachineSimulator(config)
-		else :
-			raise
-def deployReferenceAppCreateDataExchange(config):
-	try:
-		print("****************** Running deployReferenceAppCreateDataExchange ******************")
-		config.current='deployReferenceAppCreateDataExchange'
-		if config.useDataexchangeRabbitMQ in ("y","Y","Yes","Yes") :
-			createRabbitMQInstance(config)
-		if config.useDataexchangeBlobStore in ("y","Y","YES","Yes") :
-			deployReferenceAppCreateBlobstore(config)
-
-		getPredixUAAConfigfromVcaps(config)
-		getWebsocketAppInfo(config)
-		dataExchangeRepoLocation = "fdh-router-service/data-exchange"
-		configureManifest(config, dataExchangeRepoLocation)
-		pushProject(config, config.dataExchangeAppName, 'cf push '+config.dataExchangeAppName+' -f '+dataExchangeRepoLocation+'/manifest.yml',dataExchangeRepoLocation, checkIfExists="false")
-		config.retryCount=0
-	except:
-		print(traceback.print_exc())
-		print()
-		print ('Exception when running ' + config.current + '.  Retrying')
-		config.retryCount = config.retryCount + 1
-		if config.retryCount <= 1 :
-			deployReferenceAppCreateDataExchange(config)
 		else :
 			raise
 

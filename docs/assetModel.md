@@ -19,7 +19,7 @@ The model has these characteristics:
 DeviceMeter ID
 Node ID
 Timeseries Tag ID
-- A Field further describes any Attribute for purposes such as DataIngestion, UI, DataBinding for FederatedQuery, Analytics
+- A Field further describes any Attribute for purposes such as Data Ingestion, UI, DataBinding for FederatedQuery, Analytics
 - A Field has a FieldSource that describes how or where the data is stored for an Attribute
 - A Field has a DataHandler uri that knows how to retrieve or store data from/to a FieldSource
 - (future)A MachineAsset can be modeled to navigate from the Machine Id to the Devices and Assets

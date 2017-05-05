@@ -10,21 +10,21 @@
 	path = Predix-HelloWorld-WebApp
 	url = https://github.com/PredixDev/Predix-HelloWorld-WebApp.git
 	branch = master
-[submodule "data-seed-service"]
-	path = data-seed-service
-	url = https://github.com/PredixDev/data-seed-service.git
-	branch = master
-[submodule "fdh-router-service"]
- 	path = fdh-router-service
- 	url = https://github.com/PredixDev/fdh-router-service.git
+[submodule "data-exchange"]
+ 	path = data-exchange
+ 	url = https://github.com/PredixDev/data-exchange.git
+ 	branch = master
+[submodule "data-exchange-simulator"]
+ 	path = data-exchange-simulator
+ 	url = https://github.com/PredixDev/data-exchange-simulator.git
  	branch = master
 [submodule "rmd-datasource"]
 	path = rmd-datasource
 	url = https://github.com/PredixDev/rmd-datasource.git
 	branch = master
-[submodule "rmd-ref-app-ui"]
-	path = rmd-ref-app-ui
-	url = https://github.com/PredixDev/rmd-ref-app-ui.git
+[submodule "predix-webapp-starter"]
+	path = predix-webapp-starter
+	url = https://github.com/PredixDev/predix-webapp-starter.git
 	branch = master
 [submodule "predix-websocket-server"]
 	path = predix-websocket-server
