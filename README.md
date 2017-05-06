@@ -167,7 +167,6 @@ One of the primary points of the Reference App is to provide sample code and SDK
 
 ### More Details
 * [RMD overview](https://github.com/predixdev/predix-rmd-ref-app/tree/master/docs/overview.md) - the Remote Monitoring & Diagnostics use-case
-* [Front end development notes](https://github.com/predixdev/predix-webapp-starter/tree/master/public/docs/frontEndDev.md) - details on front end configuration, controllers, widgets, etc.
 * [Securing an application](https://github.com/predixdev/predix-rmd-ref-app/tree/master/docs/security.md)
 * [More GE resources](https://github.com/predixdev/predix-rmd-ref-app/tree/master/docs/resources.md)
 
