@@ -124,7 +124,7 @@ Go through the following tutorial on how to build a simple hello world applicati
 ## Microservices
 The base Asset Monitoring Ref App consists of 2 core microservices and 3 helper microservices. Each microservice can be individually managed and scaled, leveraging the Cloud Foundry infrastructure. These services can be mixed and matched for your next Predix application depending on which services you need to integrate with.
 
-### [RMD Ref App UI](https://github.com/PredixDev/predix-webapp-starter#rmd-reference-application-ui-microservice)
+### [RMD Ref App UI](https://github.com/PredixDev/predix-webapp-starter/blob/master/public/docs/ABOUT.md)
 A Polymer Web Components based UI framework. We started with the [Polymer Webapp Starter](https://github.com/PredixDev/predix-webapp-starter) for UI Development which comes with a JSON only mode that is not hooked to back-end Predix services.   The very same github repo serves as the RMD Reference App UI and is instrumented with best-practice behaviors for hooking to real back-end Predix services and apps.   The UI talks to the RMD Datasource Service, Predix UAA, Predix Asset and Predix Timerseries back-end services.
 
 More details can be found [here](https://github.com/PredixDev/predix-webapp-starter/blob/develop/public/docs/ABOUT.md).
