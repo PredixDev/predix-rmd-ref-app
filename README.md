@@ -20,7 +20,7 @@ You can view our <a href=https://youtu.be/2MGPTJ8yjyc target="_blank">Video</a> 
 
 Now, take a few moments to learn all about  Predix, using Reference App as a guide.  There is lots to discover and soon you'll be creating Predix Apps of your own.
 
-##Predix Integration
+## Predix Integration
 
 The Reference App Front-End and Back-End Microservices demonstrate how to use the Predix PAAS to build an Industrial Internet application.  The app takes advantage of the following Predix components:
 
