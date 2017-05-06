@@ -11,20 +11,20 @@
 	url = https://github.com/PredixDev/Predix-HelloWorld-WebApp.git
 	branch = master
 [submodule "data-exchange"]
- 	path = data-exchange
- 	url = https://github.com/PredixDev/data-exchange.git
- 	branch = master
+	path = data-exchange
+	url = https://github.build.ge.com/adoption/data-exchange.git
+	branch = master
 [submodule "data-exchange-simulator"]
- 	path = data-exchange-simulator
- 	url = https://github.com/PredixDev/data-exchange-simulator.git
- 	branch = master
+	path = data-exchange-simulator
+	url = https://github.build.ge.com/adoption/data-exchange-simulator.git
+	branch = master
 [submodule "rmd-datasource"]
 	path = rmd-datasource
 	url = https://github.com/PredixDev/rmd-datasource.git
 	branch = master
 [submodule "predix-webapp-starter"]
 	path = predix-webapp-starter
-	url = https://github.com/PredixDev/predix-webapp-starter.git
+	url = https://github.build.ge.com/adoption/predix-webapp-starter.git
 	branch = master
 [submodule "predix-websocket-server"]
 	path = predix-websocket-server
