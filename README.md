@@ -1,11 +1,8 @@
 <a href="http://predixdev.github.io/predix-rmd-ref-app" target="_blank">
 	<img height="50px" width="100px" src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/pages.jpg?raw=true" alt="view github pages">
 </a>
-
-
 Predix RMD Reference App 
-===========================
-
+=====================
 
 Welcome to the Predix Remote Monitoring & Diagnostics (RMD) Reference Application.  The Predix platform enables you to create applications with an Industrial Internet focus and allows you to manage and scale those applications as they are consumed by your end users.  
 
@@ -21,7 +18,6 @@ You can view our <a href=https://youtu.be/2MGPTJ8yjyc target="_blank">Video</a> 
 Now, take a few moments to learn all about  Predix, using Reference App as a guide.  There is lots to discover and soon you'll be creating Predix Apps of your own.
 
 ## Predix Integration
-
 The Reference App Front-End and Back-End Microservices demonstrate how to use the Predix PAAS to build an Industrial Internet application.  The app takes advantage of the following Predix components:
 
 [Base Asset Monitoring Reference App Installer](https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=2106&tag=1610&journey=Digital%20Twin%3A%20from%20the%20Edge%20to%20the%20Cloud%20using%20RMD%20Reference%20App&resources=1592,1473,2106,1600)
@@ -38,14 +34,14 @@ The Reference App Front-End and Back-End Microservices demonstrate how to use th
 - [Predix Machine Modbus Adapter](https://docs.predix.io/en-US/content/service/edge_software_and_services/machine/modbus-machine-adapter)
 - [Predix Data River Receiver](https://docs.predix.io/en-US/content/service/edge_software_and_services/machine/data-bus-river#concept_7975e96d-33fc-4cba-811a-8dc895d98f94)
 
-## RMD Reference App
+##RMD Reference App
 RMD Reference App is composable and the pieces can be used in a variety of configurations to help solve your Application use-case.  Like most Apps, at it's core, Reference App consists of a [RMD UI](#microservices) front end microservice and a [RMD Datasource](#microservices) back-end microservice.   
 
 <img src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-CoreMicroservices.png?raw=true">
 
 Beyond the core services there are other [microservices](#microservices) and [microcomponent utilities](#microcomponents) which help generate Data, make Secure Rest calls or integrate with all the different Predix Services and Security.
 
-## Detailed Architecture of the Base Asset Monitoring Reference App
+##Detailed Architecture of the Base Asset Monitoring Reference App
 
 Architecturally the reference app is organized into four Tiers (Presentation, Delivery, Aggregation and Storage) and supports three Data Flows (Ingestion, Analytics, Visualization)
 - Presentation Tier - UI layer and microservices
@@ -87,7 +83,7 @@ The UI accesses data from Predix Asset directly which drives the Asset selector 
 
 <img src='https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/RefApp-VisualizationFlow.png?raw=true' width=600 height=400>
 
-## Detailed Architecture of the Digital Twin Analytics Reference App
+##Detailed Architecture of the Digital Twin Analytics Reference App
 
 Since we have your attention, we'd like to introduce the features of our Digital Twin Analytics Reference App.  This builds on the base Reference App to add the ability to trigger analytic processes.
 
@@ -103,7 +99,7 @@ Go through the following Guide to get acquainted with Predix RMD Reference appli
 [Digital Twin: from the Edge to the Cloud using RMD Reference App](https://www.predix.io/resources/tutorials/journey.html#1610)
 
 
-## Setting up your environment
+##Setting up your environment
 Reference App accesses code repos at https://github.com/PredixDev and a maven repository at https://artifactory.predix.io.
 
 The best experience is to use a [DevBox](https://www.predix.io/catalog/other-resources/devbox.html) which has all the tools and settings pre-installed.  
