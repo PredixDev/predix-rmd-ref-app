@@ -7,9 +7,9 @@
     "data-exchange-simulator": "https://github.com/PredixDev/data-exchange-simulator.git#1.0.14",
     "data-exchange-ui": "https://github.com/PredixDev/data-exchange-ui.git#3.0.3",
     "local-setup": "https://github.com/PredixDev/local-setup#1.0.11",
-    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.0.161",
-    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp.git#1.0.131",
-    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter.git#1.0.3",
+    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.0.162",
+    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp.git#1.1.0",
+    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter.git#1.0.4",
     "predix-websocket-server": "https://github.com/PredixDev/predix-websocket-server.git#20151210",
     "rmd-datasource": "https://github.com/PredixDev/rmd-datasource.git#20151210"
   },
