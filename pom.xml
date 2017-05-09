@@ -5,7 +5,7 @@
 
 	<groupId>com.ge.predix.solsvc</groupId>
 	<artifactId>rmd-ref-app</artifactId>
-	<version>2.0.58</version>
+	<version>2.0.62</version>
 	<packaging>pom</packaging>
 
 	<modules>

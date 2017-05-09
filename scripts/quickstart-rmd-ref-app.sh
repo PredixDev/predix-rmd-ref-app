@@ -97,9 +97,13 @@ function init() {
   #get the script that reads version.json
   eval "$(curl -s -L $IZON_SH)"
   #get the url and branch of the requested repo from the version.json
-  __readDependency "local-setup" LOCAL_SETUP_URL LOCAL_SETUP_BRANCH
+  #__readDependency "local-setup" LOCAL_SETUP_URL LOCAL_SETUP_BRANCH
   #get the predix-scripts url and branch from the version.json
-  #__readDependency $PREDIX_SCRIPTS PREDIX_SCRIPTS_URL PREDIX_SCRIPTS_BRANCH
+  if [ ! -d "../predix-rmd-ref-app" ]; then
+    __readDependency "predix-rmd-ref-app" PREDIX_REFAPP_URL PREDIX_REFAPP_BRANCH
+    git clone --depth 1 --branch $PREDIX_REFAPP_BRANCH $PREDIX_REFAPP_URL
+    cd predix-rmd-ref-app
+  fi
 
   echo "Pulling Submodules"
   if ! $SKIP_PULL; then
