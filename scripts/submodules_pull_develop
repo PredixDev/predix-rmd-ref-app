@@ -1,12 +1,8 @@
 git status
 
-cd Predix-HelloWorld-WebApp
-git pull origin develop
 cd ../data-exchange
 git pull origin develop
 cd ../data-exchange-simulator
-git pull origin develop
-cd ../predix-scripts
 git pull origin develop
 cd ../predix-sdks
 git pull origin develop

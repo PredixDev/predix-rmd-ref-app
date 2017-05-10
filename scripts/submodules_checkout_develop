@@ -1,15 +1,11 @@
 git status
 pwd
-cd Predix-HelloWorld-WebApp
-git checkout develop
 cd ../data-exchange
 git checkout manifest.yml
 git checkout  develop
 cd ../data-exchange-simulator
 git checkout manifest.yml
 git checkout  develop
-cd ../predix-scripts
-git checkout develop
 cd ../predix-sdks
 git checkout develop
 cd ../predix-websocket-server

@@ -1,10 +1,6 @@
 git status
 
-cd predix-scripts
-git pull origin master
 cd predix-sdks
-git pull origin master
-cd Predix-HelloWorld-WebApp
 git pull origin master
 cd ../data-exchange
 git pull origin master

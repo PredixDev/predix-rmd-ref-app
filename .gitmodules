@@ -1,14 +1,6 @@
-[submodule "predix-scripts"]
-	path = predix-scripts
-	url = https://github.com/PredixDev/predix-scripts.git
-	branch = master
 [submodule "predix-sdks"]
 	path = predix-sdks
 	url = https://github.com/PredixDev/predix-sdks.git
-	branch = master
-[submodule "Predix-HelloWorld-WebApp"]
-	path = Predix-HelloWorld-WebApp
-	url = https://github.com/PredixDev/Predix-HelloWorld-WebApp.git
 	branch = master
 [submodule "data-exchange"]
  	path = data-exchange

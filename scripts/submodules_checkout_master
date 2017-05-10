@@ -1,10 +1,6 @@
 git status
 
-cd predix-scripts
-git checkout origin master
 cd predix-sdks
-git checkout origin master
-cd Predix-HelloWorld-WebApp
 git checkout origin master
 cd ../data-exchange
 git checkout origin master
