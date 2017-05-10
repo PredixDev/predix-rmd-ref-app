@@ -1,6 +1,6 @@
 <a href="http://predixdev.github.io/predix-rmd-ref-app" target="_blank">
 	<img height="50px" width="100px" src="https://github.com/PredixDev/predix-rmd-ref-app/blob/master/images/pages.jpg?raw=true" alt="view github pages">
-</a>
+</a><br>
 Predix RMD Reference App 
 =====================
 
