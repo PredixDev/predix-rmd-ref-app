@@ -51,8 +51,8 @@ REPO_NAME=predix-rmd-ref-app
 VERSION_JSON="version.json"
 APP_NAME="RMD Asset Monitoring Reference App"
 SCRIPT_NAME=quickstart-rmd-ref-app.sh
-TOOLS="Cloud Foundry CLI, Git, Java JDK, Maven, Node.js"
-TOOLS_SWITCHES="--cf --git --jdk --maven --nodejs"
+TOOLS="Cloud Foundry CLI, Git, Java JDK, Maven, Node.js, Predix CLI"
+TOOLS_SWITCHES="--cf --git --jdk --maven --nodejs --predixcli"
 
 local_read_args $@
 IZON_SH="https://raw.githubusercontent.com/PredixDev/izon/$BRANCH/izon.sh"
