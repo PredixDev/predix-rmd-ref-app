@@ -35,8 +35,8 @@ SET IZON_BAT=https://raw.githubusercontent.com/PredixDev/izon/master/izon.bat
 SET TUTORIAL=https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=1475^&tag^=1719^&journey^=Hello%%20World^&resources^=1475,1569,1523
 SET SHELL_SCRIPT_NAME=quickstart-rmd-ref-app.sh
 SET APP_NAME=RMD Asset Monitoring Reference App
-SET TOOLS=Cloud Foundry CLI, Git, Java JDK, Maven, Node.js
-SET TOOLS_SWITCHES=/git /cf /nodejs
+SET TOOLS=Cloud Foundry CLI, Git, Java JDK, Maven, Node.js, Predix CLI
+SET TOOLS_SWITCHES=/cf /git /jdk /maven /nodejs /predixcli
 
 GOTO START
 
