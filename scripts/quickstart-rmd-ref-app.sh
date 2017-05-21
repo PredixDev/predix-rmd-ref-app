@@ -49,6 +49,7 @@ VERSION_JSON="version.json"
 PREDIX_SCRIPTS=predix-scripts
 REPO_NAME=predix-rmd-ref-app
 VERSION_JSON="version.json"
+APP_DIR="rmd-ref-app"
 APP_NAME="RMD Asset Monitoring Reference App"
 SCRIPT_NAME=quickstart-rmd-ref-app.sh
 TOOLS="Cloud Foundry CLI, Git, Java JDK, Maven, Node.js, Predix CLI"
@@ -79,7 +80,10 @@ function init() {
     echo 'Please launch the script from the root dir of the project'
     exit 1
   fi
-
+  if [[ ! $currentDir == *"$REPO_NAME" ]]; then
+    mkdir -p $APP_DIR
+    cd $APP_DIR
+  fi
   check_internet
 
   #get the script that reads version.json
@@ -105,12 +109,12 @@ getPredixScripts
 #clone the repo itself if running from oneclick script
 getCurrentRepo
 
-cd predix-scripts/predix-rmd-ref-app
-echo "Pulling Submodules"
-if ! $SKIP_PULL; then
-  ./scripts/pullSubModules.sh
-fi
-cd ../..
+# cd predix-scripts/predix-rmd-ref-app
+# echo "Pulling Submodules"
+# if ! $SKIP_PULL; then
+#   ./scripts/pullSubModules.sh
+# fi
+# cd ../..
 
 echo "quickstart_args=$QUICKSTART_ARGS"
 source $PREDIX_SCRIPTS/bash/quickstart.sh $QUICKSTART_ARGS

@@ -33,10 +33,13 @@ IF [!BRANCH!]==[] (
 
 SET IZON_BAT=https://raw.githubusercontent.com/PredixDev/izon/master/izon.bat
 SET TUTORIAL=https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=1475^&tag^=1719^&journey^=Hello%%20World^&resources^=1475,1569,1523
+SET REPO_NAME=predix-rmd-ref-app
 SET SHELL_SCRIPT_NAME=quickstart-rmd-ref-app.sh
 SET APP_NAME=RMD Asset Monitoring Reference App
 SET TOOLS=Cloud Foundry CLI, Git, Java JDK, Maven, Node.js, Predix CLI
 SET TOOLS_SWITCHES=/cf /git /jdk /maven /nodejs /predixcli
+
+SET SHELL_SCRIPT_URL=https://raw.githubusercontent.com/PredixDev/!REPO_NAME!/!BRANCH!/scripts/!SHELL_SCRIPT_NAME!
 
 GOTO START
 
@@ -149,9 +152,10 @@ if !CF_URL!=="" (
   cf login -a !CF_URL! -u !CF_USER! -p !CF_PASSWORD! -o !CF_ORG! -s !CF_SPACE!
 )
 
-ECHO Running the !CURRENTDIR!\scripts\%SHELL_SCRIPT_NAME% script using Git-Bash
+powershell -Command "(new-object net.webclient).DownloadFile('!SHELL_SCRIPT_URL!','!CURRENTDIR!\!SHELL_SCRIPT_NAME!')"
+ECHO Running the !CURRENTDIR!\%SHELL_SCRIPT_NAME% script using Git-Bash
 cd !CURRENTDIR!
 ECHO.
-"%PROGRAMFILES%\Git\bin\bash" --login -i -- "!CURRENTDIR!\scripts\%SHELL_SCRIPT_NAME%" -b !BRANCH! --skip-setup !QUICKSTART_ARGS!
+"%PROGRAMFILES%\Git\bin\bash" --login -i -- "!CURRENTDIR!\%SHELL_SCRIPT_NAME%" -b !BRANCH! --skip-setup !QUICKSTART_ARGS!
 
 POPD
