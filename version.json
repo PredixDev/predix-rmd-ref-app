@@ -7,12 +7,12 @@
     "data-exchange-simulator": "https://github.com/PredixDev/data-exchange-simulator.git#1.0.17",
     "data-exchange-ui": "https://github.com/PredixDev/data-exchange-ui.git#1.0.0",
     "local-setup": "https://github.com/PredixDev/local-setup#1.0.11",
-    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.1.4",
-    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp.git#1.1.10",
-    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter.git#1.0.12",
+    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.1.9",
+    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp.git#1.1.15",
+    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter.git#1.0.15",
     "predix-websocket-server": "https://github.com/PredixDev/predix-websocket-server.git#2.1.16",
     "rmd-datasource": "https://github.com/PredixDev/rmd-datasource.git#2.0.24",
-    "predix-rmd-ref-app": "https://github.com/PredixDev/predix-rmd-ref-app.git#2.0.85"
+    "predix-rmd-ref-app": "https://github.com/PredixDev/predix-rmd-ref-app.git#2.0.93"
   },
   "author": "turnerth"
 }
