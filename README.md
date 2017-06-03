@@ -1,6 +1,19 @@
 <a href="http://predixdev.github.io/predix-rmd-ref-app" target="_blank">
 	<img height="50px" width="100px" src="images/pages.jpg" alt="view github pages">
 </a>
+
+Branch 1.0.0
+=====================
+
+This branch is relative to Jan 30th, 2017.  To install reference app:
+
+1. git clone https://github.com/PredixDev/predix-rmd-ref-app.git
+2. cd predix-rmd-ref-app
+3. git submodule init
+4. git submodule update
+5. python scripts/installRefApp.py --pullsubmodules n
+6. still testing this out - artifactory is currently down, stay tuned.
+
 Predix RMD Reference App 
 =====================
  
