@@ -7,7 +7,7 @@ Branch 1.0.0
 
 This branch is relative to Jan 30th, 2017.  To install reference app:
 
-1. git clone https://github.com/PredixDev/predix-rmd-ref-app.git
+1. git clone https://github.com/PredixDev/predix-rmd-ref-app.git -b 1.0.0
 2. cd predix-rmd-ref-app
 3. git submodule init
 4. git submodule update
