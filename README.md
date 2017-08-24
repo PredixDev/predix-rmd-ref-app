@@ -103,7 +103,7 @@ Go through the following Guide to get acquainted with Predix RMD Reference appli
 ## Setting up your environment
 Reference App accesses code repos at https://github.com/PredixDev and a maven repository at https://artifactory.predix.io.
 
-The best experience is to use a [DevBox](https://www.predix.io/catalog/other-resources/devbox.html) which has all the tools and settings pre-installed.  
+The best experience is to use a [DevBox](https://www.predix.io/services/other-resources/devbox.html) which has all the tools and settings pre-installed.  
 
 Use the quickstart script [in the tutorial](https://www.predix.io/resources/tutorials/journey.html#1610) to install the tools and the app.  
 
