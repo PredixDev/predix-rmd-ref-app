@@ -7,7 +7,7 @@
     "data-exchange-simulator": "https://github.com/PredixDev/data-exchange-simulator#1.0.24",
     "data-exchange-ui": "https://github.com/PredixDev/data-exchange-ui#1.0.0",
     "local-setup": "https://github.com/PredixDev/local-setup#1.0.12",
-    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.1.36",
+    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.1.38",
     "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp#1.1.48",
     "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter#1.0.47",
     "predix-websocket-server": "https://github.com/PredixDev/predix-websocket-server#2.1.19",
