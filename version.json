@@ -1,6 +1,6 @@
 {
   "name": "Predix Asset Monitoring RMD Reference App",
-  "version": "2.0.62",
+  "version": "2.0.152",
   "private": true,
   "dependencies": {
     "data-exchange": "https://github.com/PredixDev/data-exchange#2.0.29",
