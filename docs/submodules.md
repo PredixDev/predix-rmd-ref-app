@@ -138,7 +138,7 @@ Sample ** template.yml**
 18. Launch Machine Simulator 
       `cf push rmd_machine_simulator_${APP_NAME} -f ./machinedata-simulator/manifest.yml`
 19. Deployed UI application 
-     1. Create redis `cf cs redis-1 beta rmd_redis_${APP_NAME}` , update the manifest this service instance name.
+     1. Create predix-cache instance `cf cs predix-cache Shared-R30 rmd_cache_${APP_NAME}` , update the manifest with this service instance name.
      2. Run npm  `npm install`
      3. Get bower dependencies `bower install`
      4. Generate a distro for deployment ` grunt dist`
