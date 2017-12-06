@@ -25,7 +25,7 @@ There are two ways to insert data into the time series DB.
 
 ####  Predix Authentication Service UAA based configuration.
 The application is configured with Predix UAA configuration. The client application id is configured on the UAA for this application. 
-Login: app_user_1 / app_user_1
+Login: app_user_1 / App_User_1
 
 ***
 

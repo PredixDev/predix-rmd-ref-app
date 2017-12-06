@@ -57,8 +57,8 @@ This page will be a work-in-progress for a while till we get every last step doc
   11. Create Client Id 
      1. *<code>uaac client add ${CLIENT_ID} -s ${CLIENT_SECRET} --authorized_grant_types "authorization_code client_credentials refresh_token password" --autoapprove openid --authorities "openid acs.policies.read acs.policies.write acs.attributes.read acs.attributes.write uaa.resource uaa.none" --scope "uaa.none openid,acs.policies.read acs.policies.write acs.attributes.read acs.attributes.write"</code>
   12. Create User
-      1. <code> uaac user add app_user_1 -p app_user_1 --email rmd@user-test.com </code>
-      2. <code> uaac user add app_admin_1 -p app_admin_1 --email rmd@admin-test.com</code>
+      1. <code> uaac user add app_user_1 -p App_User_111 --email rmd@user-test.com </code>
+      2. <code> uaac user add app_admin_1 -p App_User_111 --email rmd@admin-test.com</code>
   13. Create Groups using scope names from Asset, Timeseries and ACS
       Get Asset,Timeseries and ACS scopes **(predix-acs.zones,timeseries.zones,predix-asset.zones)** from VCAPS from Step 9.
     ```  
@@ -134,7 +134,7 @@ Sample ** template.yml**
     `cf push rmd_dataseed_${APP_NAME}  -f ${BASEDIR}/dataseed-service/manifest.yml`
 17. Run Dataseed to load Spreadsheet data
   The script uploads the AssetData.xls file via the dataingestion rest API call .
-      `curl -F \"username=app_user_1}\" -F \"password=app_user_1\" -F \"file=@./data-seed-service/dataseed-service/src/main/resources/rmdapp/AssetData.xls\`
+      `curl -F \"username=app_user_1}\" -F \"password=App_User_111\" -F \"file=@./data-seed-service/dataseed-service/src/main/resources/rmdapp/AssetData.xls\`
 18. Launch Machine Simulator 
       `cf push rmd_machine_simulator_${APP_NAME} -f ./machinedata-simulator/manifest.yml`
 19. Deployed UI application 
