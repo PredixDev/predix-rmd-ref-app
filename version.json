@@ -3,16 +3,16 @@
   "version": "2.0.186",
   "private": true,
   "dependencies": {
-    "data-exchange": "https://github.com/PredixDev/data-exchange#2.0.45",
-    "data-exchange-simulator": "https://github.com/PredixDev/data-exchange-simulator#1.0.41",
+    "data-exchange": "https://github.com/PredixDev/data-exchange#2.0.47",
+    "data-exchange-simulator": "https://github.com/PredixDev/data-exchange-simulator#1.0.44",
     "data-exchange-ui": "https://github.com/PredixDev/data-exchange-ui#1.0.0",
-    "local-setup": "https://github.com/PredixDev/local-setup#1.0.20",
-    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.1.52",
-    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp#1.1.72",
-    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter#2.0.13",
-    "predix-websocket-server": "https://github.com/PredixDev/predix-websocket-server#2.1.31",
-    "rmd-datasource": "https://github.com/PredixDev/rmd-datasource#2.0.38",
-    "predix-rmd-ref-app": "https://github.com/PredixDev/predix-rmd-ref-app#2.0.191"
+    "local-setup": "https://github.com/PredixDev/local-setup#1.0.25",
+    "predix-scripts": "https://github.com/PredixDev/predix-scripts#1.1.53",
+    "Predix-HelloWorld-WebApp": "https://github.com/PredixDev/Predix-HelloWorld-WebApp#1.1.73",
+    "predix-webapp-starter": "https://github.com/PredixDev/predix-webapp-starter#2.0.14",
+    "predix-websocket-server": "https://github.com/PredixDev/predix-websocket-server#2.1.34",
+    "rmd-datasource": "https://github.com/PredixDev/rmd-datasource#2.0.40",
+    "predix-rmd-ref-app": "https://github.com/PredixDev/predix-rmd-ref-app#2.0.197"
   },
-  "author": "turnerth"
+  "author": "turnerth2"
 }
