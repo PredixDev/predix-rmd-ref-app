@@ -12,7 +12,7 @@ The RMD Reference App shows developers and architects how to use and leverage al
 You can view a running version of the  [Reference App](https://rmd-ref-app.run.aws-usw02-pr.ice.predix.io/dashboard) in your browser using these login credentials
 
         User: app_user_1
-        Password: app_user_1
+        Password: App_User_111
         
 You can view our <a href=https://youtu.be/2MGPTJ8yjyc target="_blank">Video</a> and later run the [deployment script ](https://www.predix.io/resources/tutorials/tutorial-details.html?tutorial_id=2106&tag=1610&journey=Digital%20Twin%3A%20from%20the%20Edge%20to%20the%20Cloud%20using%20RMD%20Reference%20App&resources=1592,1473,2106,1600), which will push the Reference App to your own Cloud Foundry space so you can quickly start trying out various Predix Services.
 
