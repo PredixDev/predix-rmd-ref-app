@@ -8,9 +8,6 @@ git checkout manifest.yml
 git checkout  develop
 cd ../predix-sdks
 git checkout develop
-cd ../predix-websocket-server
-git checkout manifest.yml
-git checkout  develop
 cd ../rmd-datasource
 git checkout manifest.yml
 git checkout  develop
