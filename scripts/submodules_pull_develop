@@ -6,6 +6,8 @@ cd ../data-exchange-simulator
 git pull origin develop
 cd ../predix-sdks
 git pull origin develop
+cd ../predix-websocket-server
+git pull origin develop
 cd ../rmd-datasource
 git pull origin develop
 cd ../predix-webapp-starter
