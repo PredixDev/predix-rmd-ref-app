@@ -1,0 +1,17 @@
+git status
+pwd
+cd ../data-exchange
+git checkout manifest.yml
+git checkout  develop
+cd ../data-exchange-simulator
+git checkout manifest.yml
+git checkout  develop
+cd ../predix-sdks
+git checkout develop
+cd ../rmd-datasource
+git checkout manifest.yml
+git checkout  develop
+cd ../predix-webapp-starter
+git checkout manifest.yml
+git checkout  develop
+cd ..
