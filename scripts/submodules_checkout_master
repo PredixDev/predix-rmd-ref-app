@@ -1,0 +1,15 @@
+git status
+
+cd predix-sdks
+git checkout origin master
+cd ../data-exchange
+git checkout origin master
+cd ../data-exchange-simulator
+git checkout origin master
+cd ../rmd-datasource
+git checkout origin master
+cd ../predix-webapp-starter
+git checkout origin master
+cd ../predix-websocket-server
+git checkout origin master
+
