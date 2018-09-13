@@ -1,0 +1,11 @@
+{
+  "subjectIdentifier": "app_user_1",
+  "attributes": [
+    {
+      "name": "role",
+      "value": "operator",
+      "issuer": "https://acs.attributes.int"
+    }
+  ],
+  "subjectId": "app_user_1"
+}

@@ -1,0 +1,204 @@
+#!/usr/bin/env groovy
+@Library('devrel') _
+def complianceEnabled = true;
+def pullRequest = env.CHANGE_ID
+def pullTarget = env.CHANGE_TARGET
+def org = "adoption"
+def repoName = "predix-rmd-ref-app"
+def branchName = env.BRANCH_NAME
+def jobName = "app-predix-rmd-ref-app"
+def devMvnSettings = "mvn_settings_snapshot_with_external.xml"
+def buildDependencyJobs = ""
+def dependencyRepos = "local-setup, predix-scripts, data-exchange-simulator, predix-webapp-starter, rmd-datasource, predix-websocket-server"
+def dependencyJobs = "util-local-setup, util-predix-scripts, MS-data-exchange-simulator, app-predix-webapp-starter, MS-rmd-datasource, MS-predix-websocket-server"
+def quickstartScript = "quickstart-rmd-ref-app.sh"
+def uiAppName = ""
+def uiTestJobName = ""
+
+pipeline {
+  agent {
+    docker {
+      image 'predixadoption/devrelprediximage:latest'
+      label 'dind'
+    }
+  }
+  environment {
+    COMPLIANCEENABLED = true
+    CF_AWS_CREDS = credentials('cf_aws_creds')
+    DEVCLOUD_ARTIFACTORY_CREDS = credentials('devcloud_artifactory_creds')
+    EXT_GITHUB_CREDS = credentials('external_git_creds')
+    EXT_ARTIFACTORY_USER_CREDS = credentials('external_artifactory_user_creds')
+  }
+  parameters {
+    string(name: 'BUILD', defaultValue: 'true', description: 'checkout, build, test and/or deploy')
+    string(name: 'INCREMENT', defaultValue: 'none', description: 'increment version - patch | major | minor')
+    string(name: 'INCREMENT_DEPENDENCIES', defaultValue: 'false', description: 'point at latest dependencies in develop')
+    string(name: 'MERGE_MASTER', defaultValue: 'false', description: 'merge to master')
+    string(name: 'RELEASE', defaultValue: 'false', description: 'release master to production')
+    string(name: 'SMOKE_TEST', defaultValue: 'false', description: 'run smoketests in production')
+    string(name: 'MORE_SWITCHES', defaultValue: '', description: 'more things for quickstart to do')
+    string(name: 'INSTANCE_PREFIX', defaultValue: 'rmd-ref-app', description: 'this is a prefix added to app names and service names to make them unique')
+    string(name: 'POPS', defaultValue: 'uswest,useast,frankfurt,japan', description: 'one or more of these: uswest,useast,frankfurt,japan')
+    string(name: 'LIVE_PUSH', defaultValue: 'false', description: 'deploy live app to uswest')
+  }
+  stages {
+    stage("Checkout" ) {
+      steps {
+        echo "The workspace is ${env.WORKSPACE}"	    
+        script {
+          echo 'Stage Checkout'
+          internalrelease.checkoutPropelSharedLibrary()
+        }
+      }
+      post {
+        success {
+          echo "Checkout stage completed successfully"
+        }
+        failure {
+          echo "Checkout stage failed"
+        }
+      }
+    }
+    stage("Build, Test, Deploy" ) {
+      when {
+        allOf { environment name: 'BUILD', value: 'true'; environment name: 'MERGE_MASTER', value: 'false';  environment name: 'INCREMENT', value: 'none'; environment name: 'INCREMENT_DEPENDENCIES', value: 'false';  environment name: 'RELEASE', value: 'false'; environment name: 'SMOKE_TEST', value: 'false'; }
+      }
+      steps {
+        script {
+          echo 'Stage Build, Test, Deploy'
+          internalrelease.build(org, repoName, branchName, jobName, buildDependencyJobs.split(','), devMvnSettings, quickstartScript)
+        }
+      }
+      post {
+        success {
+          echo "Build, Test, Deploy stage completed successfully"
+        }
+        failure {
+          script {
+            echo "Build, Test, Deploy stage failed"
+            internalrelease.buildFailed(repoName)
+          } 
+        }
+      }
+    }
+    stage('MergeToDevelop') {
+      when {
+        environment name: 'CHANGE_TARGET', value: 'develop'
+      }
+      steps {
+        script {
+          echo 'Stage MergeToDevelop'
+          internalrelease.mergeToDevelop()
+        }
+      }
+    }
+    stage('IncrementVersion') {
+      when {
+        branch 'develop'
+        environment name: 'INCREMENT', value: 'patch'
+      }
+      steps {
+        script {
+          echo 'Stage Increment - run this stage to increment version on develop'
+          internalrelease.incrementVersion(org, repoName, env.INCREMENT, "mvn_settings_snapshot_with_external.xml")
+        }
+      }
+      post {
+        success {
+          echo "IncrementVersion stage completed, time to trigger increment dependencies on dependent projects to point at my new version"
+        }
+        failure {
+          echo "Increment stage failed"
+        }
+      }
+    }
+    stage('IncrementVersionInDependencies') {
+      when {
+        branch 'develop'
+        environment name: 'INCREMENT_DEPENDENCIES', value: 'true'
+      }
+      steps {
+        script {
+          echo 'Stage IncrementVersionInDependencies - run this stage - when versions of dependencies have changed, to point at latest versio of that dependency'
+          internalrelease.incrementDependencies(org, repoName)
+        }
+      }
+      post {
+        success {
+          echo "incrementDependencies stage completed successfully"
+        }
+        failure {
+          echo "incrementDependencies stage failed"
+        }
+      }
+    }
+    stage('MergeMaster') {
+      when {
+        branch 'develop'
+        anyOf { environment name: 'MERGE_MASTER', value: 'true';  }
+      }
+      steps {
+        script {
+          internalrelease.mergeToMaster(org, repoName, dependencyRepos, dependencyJobs)
+          build job: "app-predix-rmd-ref-app/develop",parameters: [[$class: 'StringParameterValue', name: 'INCREMENT', value: 'patch'], [$class: 'StringParameterValue', name: 'BUILD', value: 'false']] ,propagate: false, wait: false
+        }
+      }
+      post {
+        success {
+          echo "MergeMaster completed successfully"
+        }
+        failure {
+          echo "MergeMaster failed"
+        }
+      }
+    }
+    stage("Release, SmokeTest" ) {
+      when {
+        environment name: 'RELEASE', value: 'true'
+      }
+      steps {
+        script {
+          echo 'Stage Release, SmokeTest'
+          externalrelease.release(org, repoName, branchName, jobName, dependencyRepos, dependencyJobs)
+        }
+      }
+      post {
+        success {
+          echo "Release completed successfully"
+        }
+        failure {
+          echo "Release failed"
+        }
+      }
+    }
+    stage("Live push - USWest") {
+      when {
+        // branch 'master'
+        environment name: 'LIVE_PUSH', value: 'true'
+      }
+      steps {
+        script {
+          lock ("${repoName}-Live-Push") {
+            externalrelease.livePushRefApp("${params.INSTANCE_PREFIX}")
+          }
+        }
+      }
+      post {
+        success {
+          echo "Live push completed successfully"
+        }
+        failure {
+          echo "Live push failed"
+        }
+      }
+    }
+  }
+  post {
+    always {
+      script {
+        internalrelease.cleanupAfterJob()
+        notifications.sendFlowdockMsg()
+      }
+    }
+  }
+}
