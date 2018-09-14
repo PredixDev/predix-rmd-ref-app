@@ -1,0 +1,15 @@
+{
+  "action": "POST",
+  "resourceIdentifier": "/validateuser",
+  "subjectAttributes": [
+    {
+      "issuer": "https://acs.attributes.int",
+      "name": "role",
+      "scopes": [
+        {}
+      ],
+      "value": "admin"
+    }
+  ],
+  "subjectIdentifier": "app_admin_1"
+}
