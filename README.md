@@ -162,4 +162,4 @@ One of the primary points of the Reference App is to provide sample code and SDK
 * [Securing an application](https://github.com/predixdev/predix-rmd-ref-app/tree/master/docs/security.md)
 * [More GE resources](https://github.com/predixdev/predix-rmd-ref-app/tree/master/docs/resources.md)
 
-[![Analytics](https://ga-beacon.appspot.com/UA-82773213-1/predix-rmd-ref-app/readme?pixel)](https://github.com/PredixDev)
+[![Analytics](https://predix-beacon.appspot.com/UA-82773213-1/predix-rmd-ref-app/readme?pixel)](https://github.com/PredixDev)
