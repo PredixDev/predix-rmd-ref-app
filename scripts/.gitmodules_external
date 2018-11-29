@@ -1,12 +1,13 @@
 [submodule "data-exchange"]
-	path = data-exchange
-	url = https://github.com/PredixDev/data-exchange.git
+ 	path = data-exchange
+ 	url = https://github.com/PredixDev/data-exchange.git
 [submodule "data-exchange-simulator"]
-	path = data-exchange-simulator
-	url = https://github.com/PredixDev/data-exchange-simulator.git
+ 	path = data-exchange-simulator
+ 	url = https://github.com/PredixDev/data-exchange-simulator.git
 [submodule "rmd-datasource"]
 	path = rmd-datasource
 	url = https://github.com/PredixDev/rmd-datasource.git
+	branch = master
 [submodule "predix-webapp-starter"]
 	path = predix-webapp-starter
 	url = http://github.com/PredixDev/predix-webapp-starter.git
