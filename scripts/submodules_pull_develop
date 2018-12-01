@@ -1,0 +1,11 @@
+git status
+
+cd ../data-exchange
+git pull origin develop
+cd ../data-exchange-simulator
+git pull origin develop
+cd ../rmd-datasource
+git pull origin develop
+cd ../predix-webapp-starter
+git pull origin develop
+cd ..

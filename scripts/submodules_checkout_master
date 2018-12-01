@@ -1,0 +1,12 @@
+git status
+
+cd data-exchange
+git checkout origin master
+cd ../data-exchange-simulator
+git checkout origin master
+cd ../rmd-datasource
+git checkout origin master
+cd ../predix-webapp-starter
+git checkout origin master
+
+
