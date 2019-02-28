@@ -1,0 +1,73 @@
+{
+    "name" : "refapp-acs-policy",
+    "policies" : [
+            {
+            "name" : "allow-all-HTTP-requests-for-admin",
+            "target" : {
+                "resource" : {
+                    "uriTemplate" : "/validateuser"
+                },
+                "subject" : {
+                    "name" : "has-role",
+                    "attributes" : [
+                        { "issuer" : "https://acs.attributes.int",
+                          "name" : "role" }
+                    ]
+                }
+            },
+            "conditions" : [
+                { "name" : "",
+                  "condition" : "match.single(subject.attributes('https://acs.attributes.int', 'role'), 'admin')" }
+            ],
+            "effect" : "PERMIT"
+        }
+    ,
+    {
+            "name" : "allow-only- POST-for-operator",
+            "target" : {
+                "resource" : {
+                    "uriTemplate" : "/validateuser"
+                },
+                "action":"POST",
+                "subject" : {
+                    "name" : "has-role",
+                    "attributes" : [
+                        { "issuer" : "https://acs.attributes.int",
+                          "name" : "role" }
+                    ]
+                }
+            },
+            "conditions" : [
+                { "name" : "",
+                  "condition" : "match.single(subject.attributes('https://acs.attributes.int', 'role'), 'admin')" }
+            ],
+            "effect" : "PERMIT"
+        },
+        {
+            "name" : "allow-only-HTTP GET-for-operator",
+            "target" : {
+                "resource" : {
+                    "uriTemplate" : "/validateuser"
+                },
+                "action":"GET",
+                "subject" : {
+                    "name" : "has-role",
+                    "attributes" : [
+                        { "issuer" : "https://acs.attributes.int",
+                          "name" : "role" }
+                    ]
+                }
+            },
+            "conditions" : [
+                { "name" : "",
+                  "condition" : "match.single(subject.attributes('https://acs.attributes.int', 'role'), 'operator')" }
+            ],
+            "effect" : "PERMIT"
+        }
+    ,
+        {
+            "name" : "catch-all-DENY-policy",
+            "effect" : "DENY"
+        }
+    ]
+}
